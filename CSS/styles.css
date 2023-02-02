@@ -10,6 +10,12 @@ body {
   color: #201e20;
 }
 
+.flex-box {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
 ul {
   list-style: none;
 }
@@ -67,10 +73,11 @@ li {
   padding: 0 30px;
 }
 
-.menu-button{
-  display:none;
+.menu-button {
+  display: none;
 
 }
+
 .navbar .flex {
   display: flex;
   justify-content: space-between;
@@ -128,14 +135,13 @@ li {
 
 .main-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .flex-item-1 {
   flex-direction: column;
   position: relative;
   top: 15em;
-  left: 6em;
 }
 
 .flex-item-2 {
@@ -265,6 +271,7 @@ li {
 }
 
 .story-flex {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -288,7 +295,7 @@ li {
 }
 
 .story-img-style {
-  width: 800px;
+  width: 80%;
   height: 300px;
   background-size: cover;
   background-position: center;
@@ -298,6 +305,7 @@ li {
 
 .story-img-1 {
   background-image: url("../img/product4.jpg");
+  background-size: cover;
 }
 
 .story-img-2 {
@@ -329,11 +337,11 @@ li {
   background-size: cover;
   border: 3px solid #a47f60;
   height: 90px;
-  position: relative;
-  top: -40px;
   left: 280px;
   border-radius: 50%;
   width: 90px;
+  /* position: relative;
+  top: -40px; */
 }
 
 .circle-img-1 {
@@ -602,6 +610,7 @@ select::selection {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .message select {
@@ -802,47 +811,23 @@ div[class="card card-3-1"]:hover {
 }
 
 @media(max-width:1000px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
   .row {
     flex-direction: column;
     justify-content: space-evenly;
     /* align-items: center;
     ; */
   }
-}
 
-@media (max-width: 768px) {
-  video {
-    width: 80%;
-  }
-.menu-button{
-  display:block;
-}
-  nav{
-    display:none;
+  .img-grid {
+    display: block;
   }
 
-
-  .personal-info>* {
-    display: flex;
-    width: 30%;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /*not working*/
-
-  .natural-showcase {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .natural-button {
-    z-index: 2;
-  }
-
-  .center-bg {
-    z-index: 1;
+  .main-flex {
+    flex-direction: column-reverse;
   }
 
   h1,
@@ -855,7 +840,68 @@ div[class="card card-3-1"]:hover {
     font-size: 80%;
   }
 
+  .btn[type="submit"] {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  video {
+    width: 80%;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+
+  .personal-info,
+  .message>* {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .natural-showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .natural-button {
+    z-index: 2;
+  }
+
+  .center-bg {
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+  }
+
   .category-img-item {
     margin-bottom: 1em;
   }
+
+  .message select {
+    width: 300px;
+  }
+
+  .message textarea {
+    width: 300px;
+    height: 80px;
+  }
+
+  /* .btn[type="submit"]{
+    margin-bottom: 1em;
+  } */
 }
